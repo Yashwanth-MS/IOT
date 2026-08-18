@@ -1,28 +1,20 @@
 package day2;
-interface Atm
-{
-	abstract void depo();	
-	abstract void with();
+interface Atm {
+	abstract void depo();
 }
-abstract class Abc implements Atm
-{	
-	public	void depo()
-	{
-		System.out.println("Depos");
-	}
-	}
-
-public class pro14 extends Abc{
-
-	public	void with()
-	{
-		System.out.println("With");
-	}
-
-	
-public static void main(String[] args) {
-	pro14   v = new pro14();
-	v.depo();
-	v.with();
+interface Atm1 {
+	abstract void min();
 }
+public class pro16 implements Atm, Atm1 {
+	public void depo() {
+		System.out.println("dep");
+	}
+	public void min() {
+		System.out.println("min");
+	}
+	public static void main(String[] args) {
+		pro16 v = new pro16();
+		v.min();
+		v.depo();
+	}
 }
