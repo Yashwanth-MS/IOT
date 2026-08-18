@@ -1,6 +1,6 @@
 package day2;
 
-public class pro16 {
+public class pro15 {
 
 	public static void main(String[] args) {
 		String a="abcd";
