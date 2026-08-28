@@ -1,14 +1,13 @@
 package day8;
 
-public class pro1 {
+public class pro2 {
 	static class Node{
 		int data;
+		Node previous;
 		Node next;
 		Node(int data){
 			this.data = data;
-			this.next = null;
 		}
-		
 	}
 
 	public static void main(String[] args) {
@@ -17,12 +16,20 @@ public class pro1 {
 		Node third = new Node(30);
 		first.next = second;
 		second.next = third;
+		second.previous = first;
+		third.previous = second;
 		Node current = first;
+		System.out.println("Forward:");
 		while(current != null) {
-			System.out.print(current.data+" -> ");
+			System.out.print(current.data+" ");
 			current = current.next;
 		}
-		System.out.println();
+		current = third;
+		System.out.println("\n backward:");
+		while(current != null) {
+			System.out.print(current.data+" ");
+			current = current.previous;
+		}
 	}
 
 }

@@ -1,28 +1,34 @@
 package day8;
 
-public class pro1 {
+public class pro4 {
 	static class Node{
 		int data;
 		Node next;
 		Node(int data){
 			this.data = data;
-			this.next = null;
 		}
-		
-	}
-
 	public static void main(String[] args) {
 		Node first = new Node(10);
 		Node second = new Node(20);
 		Node third = new Node(30);
 		first.next = second;
 		second.next = third;
+		Node previous = null;
 		Node current = first;
 		while(current != null) {
-			System.out.print(current.data+" -> ");
+			Node next = current.next;
+			current.next = previous;
+			previous = current;
+			current = next;
+		}
+		current = previous;
+		while(current != null) {
+			System.out.println(current.data+" -> ");
 			current = current.next;
 		}
-		System.out.println();
+		System.out.println("NULL");
+	}
+		
 	}
 
 }
